@@ -1,14 +1,14 @@
 # [modsem](https://kss2k.github.io/intro_modsem/) <img src="man/figures/modsem.png" alt="Logo" align = "right" height="139" class="logo">
-This is a package which allows you to perform interactions between latent variables (i.e., moderation) in CB-SEM. See https://kss2k.github.io/intro_modsem/ for a tutorial.
+This is a version of the `modsem` package where the `qml` is parallelized using `RcppParallel`.
+If you're using a large dataset, it might be faster to use this version, but for smaller datasets, 
+the original version is likely faster.
+
+
 
 # To Install 
 ```
-# From CRAN 
-install.packages("modsem")
-
-# Latest version from Github
-install.packages("devtools")
-devtools::install_github("kss2k/modsem", build_vignettes = TRUE)
+devtools::install_github("kss2k/modsem", build_vignettes = TRUE, 
+                         ref = "parallelized")
 ```
 
 # Methods/Approaches
