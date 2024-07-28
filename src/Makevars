@@ -14,14 +14,6 @@
 ## installation will do the right thing. Should you need it, uncomment it and
 ## set the appropriate value, possibly CXX17.
 # CXX_STD = CXX11
-#
-# old
-# PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)
-# PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
-# PKG_LIBS += $(shell ${R_HOME}/bin/Rscript -e "RcppParallel::RcppParallelLibs()")
-#
-# new
-CXX_STD = CXX17
-PKG_CXXFLAGS += -DARMA_64BIT_WORD
-
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)
+PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
 PKG_LIBS += $(shell ${R_HOME}/bin/Rscript -e "RcppParallel::RcppParallelLibs()")

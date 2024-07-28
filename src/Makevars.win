@@ -15,15 +15,7 @@
 ## set the appropriate value, possibly CXX17.
 # CXX_STD = CXX11
 
-# old
-# PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)
-# PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
-# PKG_CXXFLAGS += -DRCPP_PARALLEL_USE_TBB=1
-# PKG_LIBS += $(shell "${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" -e "RcppParallel::RcppParallelLibs()")
-#
-# new 
-CXX_STD = CXX17
-PKG_CXXFLAGS += -DARMA_64BIT_WORD -DRCPP_PARALLEL_USE_TBB=1
-
-PKG_LIBS += $(shell "${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" \
-              -e "RcppParallel::RcppParallelLibs()")
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)
+PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
+PKG_CXXFLAGS += -DRCPP_PARALLEL_USE_TBB=1
+PKG_LIBS += $(shell "${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" -e "RcppParallel::RcppParallelLibs()")
