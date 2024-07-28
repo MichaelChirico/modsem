@@ -9,6 +9,9 @@ sigmaLmsCpp <- function(model, z) {
     .Call(`_modsem_sigmaLmsCpp`, model, z)
 }
 
+#' @importFrom RcppParallel RcppParallelLibs
+NULL
+
 muQmlCpp <- function(m, t) {
     .Call(`_modsem_muQmlCpp`, m, t)
 }
@@ -43,9 +46,5 @@ multiplyIndicatorsCpp <- function(df) {
 
 rep_dmvnorm <- function(x, expected, sigma, t) {
     .Call(`_modsem_rep_dmvnorm`, x, expected, sigma, t)
-}
-
-dmvnrm_arma_mc <- function(x, mean, sigma, logd = TRUE) {
-    .Call(`_modsem_dmvnrm_arma_mc`, x, mean, sigma, logd)
 }
 
