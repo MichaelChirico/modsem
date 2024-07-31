@@ -77,7 +77,7 @@ covModel <- function(syntax = NULL, method = "lms", parTable = NULL) {
 fillCovModel <- function(covModel, theta, thetaLabel, fillPhi = FALSE, 
                          method = "lms") {
   if (is.null(names(theta))) names(theta) <- names(covModel$theta)
-  if (is.null(covModel$matrices)) return(NULL)
+  if (is.null(covModel$matrices)) return(covModel)
   matrices <- covModel$matrices 
 
   matrices <- fillMatricesLabels(matrices[paramMatricesCov], 
